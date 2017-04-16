@@ -1,0 +1,120 @@
+﻿@using cms.rponey.cc.Utilty.Extend
+@using oa.rponey.cc.Model
+@using oa.rponey.cc.Model.Entity
+@{
+    var list = new List<FinanceDetailEntity>
+    {
+        new FinanceDetailEntity()
+        {
+            Descript = "购买域名",
+            FinanceType = 2,
+            UsedBy = "陈雨",
+            Money = 45
+        },
+        new FinanceDetailEntity()
+        {
+            Descript = "购买三年服务器",
+            FinanceType = 2,
+            UsedBy = "陈雨",
+            Money = 2685.60M
+        },
+        new FinanceDetailEntity()
+        {
+            Descript = "缴纳团队启动资金",
+            FinanceType = 1,
+            UsedBy = "陈雨",
+            Money = 600
+        },
+        new FinanceDetailEntity()
+        {
+            Descript = "缴纳团队启动资金",
+            FinanceType = 1,
+            UsedBy = "余秋霞",
+            Money = 600
+        },
+        new FinanceDetailEntity()
+        {
+            Descript = "缴纳团队启动资金",
+            FinanceType = 1,
+            UsedBy = "吴永鸿",
+            Money = 600
+        },
+        new FinanceDetailEntity()
+        {
+            Descript = "缴纳团队启动资金",
+            FinanceType = 1,
+            UsedBy = "李有强",
+            Money = 600
+        },
+        new FinanceDetailEntity()
+        {
+            Descript = "缴纳团队启动资金",
+            FinanceType = 1,
+            UsedBy = "刘镜煌",
+            Money = 600
+        }
+    };
+}
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+        <div class="ibox-content">
+            <div class="row row-lg">
+                <div class="col-sm-12">
+                    <!-- Example Card View -->
+                    <div class="example-wrap">
+                        <h4 class="example-title">财务明细</h4>
+                        <div class="example">
+                            <div class="bootstrap-table">
+                                <div class="fixed-table-toolbar"></div><div class="fixed-table-container" style="padding-bottom: 0px;">
+                                    <div class="fixed-table-header" style="display: none;">
+                                        <table></table>
+                                    </div>
+                                    <div class="fixed-table-body">
+                                        <div class="fixed-table-loading" style="top: 37px; display: none;">正在努力地加载数据中，请稍候……</div>
+                                        <table data-toggle="table" data-url="js/demo/bootstrap_table_test2.json" data-card-view="true" data-mobile-responsive="true" class="table table-hover" style="margin-top: 0px;">
+                                            <thead style="display: table-header-group;">
+                                                <tr>
+                                                    <th style="" data-field="name" tabindex="0">
+                                                        <div class="th-inner ">说明</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th style="" data-field="star" tabindex="0">
+                                                        <div class="th-inner ">金额</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th style="" data-field="license" tabindex="0">
+                                                        <div class="th-inner ">用户</div>
+                                                        <div class="fht-cell"></div>
+                                                    </th>
+                                                    <th style="" data-field="description" tabindex="0">
+                                                        <div class="th-inner ">收支类型</div>
+                                                    </th>
+                                                </tr>
+                                            <tbody>
+                                                @foreach (var item in list)
+                                                {
+                                                    <tr data-index="0">
+                                                        <td style="">@item.Descript</td>
+                                                        <td style="">@item.Money</td>
+                                                        <td style="">@item.UsedBy</td>
+                                                        <td style="">@(((PublicEnum.FinanceTypeEnum)item.FinanceType).GetRemark())</td>
+                                                    </tr>
+                                                }
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="fixed-table-footer" style="display: none;">
+                                        <table><tbody><tr></tr></tbody></table>
+                                    </div>
+                                    <div class="fixed-table-pagination" style="display: none;"></div>
+                                </div>
+                            </div><div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!-- End Example Card View -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
